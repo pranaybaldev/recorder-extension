@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Journey Recorder",
+  "version": "1.0",
+  "description": "Records and replays user interactions on a webpage.",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "permissions": ["activeTab", "scripting", "storage", "tabs"],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
